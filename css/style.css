@@ -800,8 +800,9 @@ img {
 
 .form-input:focus-within .form-icon {
     fill: var(--accent-color);
-    outline:none;
-    border-color: var(--accent-color);
+    outline: transparent;
+    outline-color: var(--accent-color);
+    /* border-color: var(--accent-color); */
     
 }
 
