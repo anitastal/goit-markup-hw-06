@@ -776,7 +776,7 @@ img {
 }
 
 .form-field{
-    position: relative;
+    /* position: relative; */
     
     display: flex;
     flex-direction: column;
@@ -785,13 +785,26 @@ img {
 
     transition: fill var(--main-transformation), border var(--main-transformation);
 }
-.form-field:hover .form-icon,
-.form-field:focus .form-icon,
-.form-field:hover input,
-.form-field:focus input{
+.form-input{
+    position: relative;
+}
+.form-input:hover input,
+.form-input:focus input,
+.form-input:hover .form-icon
+/* .form-input:focus-within .form-icon */
+{
     border-color: var(--accent-color);
     fill: var(--accent-color);
+    /* outline: none; */
 }
+
+.form-input:focus-within .form-icon {
+    fill: var(--accent-color);
+    outline:none;
+    border-color: var(--accent-color);
+    
+}
+
 .form-label{
     margin-bottom: 4px;
     font-size: 12px;
@@ -805,8 +818,22 @@ img {
     border-radius: 4px;
     min-height: 40px;
     padding-left: 42px;
+    width: 100%;
 }
+.form-line{
+    width: 528px;
+    position: relative;
+}
+.form-icon {
+    position: absolute;
+    top: 0;
+    transform: translate(50%, 50%);
+    
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
 
+}
 .form-field textarea::placeholder{
     font-size: 12px;
 
@@ -823,6 +850,7 @@ textarea{
    
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 20px;
     font-size: 14px;
     letter-spacing: 0.03em;
@@ -880,14 +908,4 @@ textarea{
 .modal-link{
     margin-left: 5px ;
     color: var(--accent-color);
-}
-.form-icon{
-    position: absolute;
-    top: 50%;
-    left: 12px;
-    transform: translateY(-15%) ;
-    width: 18px;
-    height: 18px;
-    fill: #000000;
-    
 }
